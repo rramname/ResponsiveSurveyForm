@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            .mainContainer{
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                display: grid;
+                grid-template-areas:
+                "header"
+                "body"
+                "footer";
+
+            }
+            #title{
+          
+                grid-area: "header"
+            }
+            #survey-form{
+                grid-area: "body";
+                display:grid;
+                grid-template-columns: 50% 50%;
+            }
+            #qustions{
+                display: grid;
+                grid-template-columns: 100%;
+                
+            }
+            #answers{
+                justify-self: left;
+            }
+
+        </style>
+    </head>
+    <body class="mainContainer">
+        <div id="title"><h1>Survey Form</h1></div>
+        <p id="description">Please answer below questions</p>
+        <form id="survey-form">
+            <div id="questions">
+            <label>Name</label>
+            <label>Email</label>
+            <label>Number</label>
+            <label>Country</label>
+            <label>Gender</label>
+            <label for="streamofChoice">
+            <label>Reason for choice</label>
+        </div>
+        <div id="answers">
+            <input type="text" id="name" />
+            <input type="email" id="email" />
+            <input type="number" id="email" />
+                <select id="dropdown">
+                    <option value="USA">USA</option>
+                    <option value="nonUSA">Non-USA</option>
+                </select>
+            
+                <label for="male"></label><input value="male" type="radio" name="gender"/>
+                <label for="female"></label><input value="female" type="radio" name="gender"/>
+                
+                    <input type="checkbox" name="streamOfChoice"><label>Front End</label>
+                    <input type="checkbox" name="streamOfChoice"><label>BackEnd</label>
+                    <input type="checkbox" name="streamOfChoice"><label>Machine Learning</label>
+                </label>
+                <textarea></textarea>
+            </div>
+        </form>
+    </body>
+</html>
