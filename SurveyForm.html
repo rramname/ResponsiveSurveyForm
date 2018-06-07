@@ -1,68 +1,90 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <style>
-            .mainContainer{
-                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-                display: grid;
-                grid-template-areas:
-                "header"
-                "body"
-                "footer";
 
-            }
-            #title{
-          
-                grid-area: "header"
-            }
-            #survey-form{
-                grid-area: "body";
-                display:grid;
-                grid-template-columns: 50% 50%;
-            }
-            #qustions{
-                display: grid;
-                grid-template-columns: 100%;
-                
-            }
-            #answers{
-                justify-self: left;
-            }
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <style>
+        .mainContainer {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            display: grid;
+            grid-template-areas: "header" "body" "footer";
+            background-color: antiquewhite;
+        }
 
-        </style>
-    </head>
-    <body class="mainContainer">
-        <div id="title"><h1>Survey Form</h1></div>
-        <p id="description">Please answer below questions</p>
-        <form id="survey-form">
-            <div id="questions">
-            <label>Name</label>
-            <label>Email</label>
-            <label>Number</label>
-            <label>Country</label>
-            <label>Gender</label>
-            <label for="streamofChoice">
-            <label>Reason for choice</label>
-        </div>
-        <div id="answers">
-            <input type="text" id="name" />
-            <input type="email" id="email" />
-            <input type="number" id="email" />
-                <select id="dropdown">
-                    <option value="USA">USA</option>
-                    <option value="nonUSA">Non-USA</option>
-                </select>
-            
-                <label for="male"></label><input value="male" type="radio" name="gender"/>
-                <label for="female"></label><input value="female" type="radio" name="gender"/>
-                
-                    <input type="checkbox" name="streamOfChoice"><label>Front End</label>
-                    <input type="checkbox" name="streamOfChoice"><label>BackEnd</label>
-                    <input type="checkbox" name="streamOfChoice"><label>Machine Learning</label>
-                </label>
-                <textarea></textarea>
+        #title {
+
+            grid-area: "header";
+            background-color: indianred;
+            padding-left: 2%;
+            color: white;
+        }
+
+        #survey-form {
+            grid-area: "body";
+            border: solid;
+            display: grid;
+            align-self: center;
+            justify-self: center;
+            grid-template-columns: 1fr 2fr;
+            grid-gap: 5pt;
+            width: 70%;
+            padding: 2%;
+            line-height: 2;
+        }
+        #submit{
+            width:100pt;
+            height:30pt;
+            background-color: indianred;
+            color: white;
+        }
+        label{
+            justify-self: right;
+        }
+    </style>
+</head>
+
+<body class="mainContainer">
+    
+        <h1 id="title">Survey Form</h1>
+    <p id="description">Please answer below questions</p>
+    <form id="survey-form">
+            <label id="name-label">Name</label>
+            <input  type="text" id="name" required placeholder="name" />
+
+            <label id="email-label">Email</label>
+            <input type="email" id="email" required placeholder="email"/>
+
+            <label id="number-label" >Age:</label>
+            <input type="number" id="number" min="1" max="120" placeholder="between 1 to 120" />
+
+            <label >Country</label>
+            <select id="dropdown" >
+                <option value="USA">USA</option>
+                <option value="nonUSA">Non-USA</option>
+            </select>
+
+            <label >Gender</label>
+            <div >
+                <span>Male</span>
+                <input value="male" type="radio" name="gender" />
+                <span>Female</span>
+                <input value="female" type="radio" name="gender" />
             </div>
-        </form>
-    </body>
+
+            <label>Stream of Choice:</label>
+                <div >
+                    <input type="checkbox" value="frontEnd" name="streamOfChoice">
+                    <label>Front End</label>
+                    <input type="checkbox" value="backEnd" name="streamOfChoice">
+                    <label>BackEnd</label>
+                    <input type="checkbox" value="machine" name="streamOfChoice">
+                    <label>Machine Learning</label>
+                </div>
+                <label >Reason for choice:</label>
+                <textarea ></textarea>
+                <div></div><input type="submit"  value="Submit" id="submit" />
+    </form>
+</body>
+
 </html>
